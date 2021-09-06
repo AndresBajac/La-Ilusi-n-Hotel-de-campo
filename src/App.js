@@ -1,23 +1,13 @@
-import logo from './logo.svg';
 import './App.css';
-import NavBar from './Components/NavBar'
+import NavBar from '../src/Components/Navbar/NavBar'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { ItemListContainer } from './Components/ItemListContainer/ItemListContainer';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <NavBar />
-        <img src={logo} className="App-logo" alt="logo" />
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='root-container'>
+      <NavBar name="" />
+      <ItemListContainer titulo={"ESTUDIO CONTABLE"} greeting={"CLEMENTE ASOCIADOS"} dirección={"San Juan 1266"} />
     </div>
   );
 }
