@@ -1,4 +1,14 @@
-#cardPrincipal{
-    width: '50rem';
-    text-align: center;
+.itemContainer{
+    @apply bg-gray-50;
+    min-height: calc(100vh - 128px);
+}
+
+.itemContainer-title{
+    @apply my-5 text-xl text-center;
+}
+
+@screen sm {
+    .itemContainer-title{
+        @apply my-6 text-2xl;
+    }
 }

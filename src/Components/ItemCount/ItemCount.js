@@ -5,7 +5,7 @@ import './ItemCount.css'
 
 const ItemCount = (props) => {
 
-    const [count, setCount] = useState(1);
+    const [count, setCount] = useState(0);
     
     function onAdd (sign) {
         if ((sign === '+') && (count < props.max)) {
