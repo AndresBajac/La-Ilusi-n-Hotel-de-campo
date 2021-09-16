@@ -3,6 +3,7 @@ import NavBar from '../src/Components/Navbar/NavBar'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ItemListContainer from './Components/ItemListContainer/ItemListContainer';
 import ItemCount from './Components/ItemCount/ItemCount.js'
+import ItemDetailContainer from './Components/ItemDetailContainer/ItemDetailContainer';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       </header>
       <ItemListContainer/>
       <ItemCount max={10} min={0} />
+      <ItemDetailContainer/>
     </div>
   );
 }
