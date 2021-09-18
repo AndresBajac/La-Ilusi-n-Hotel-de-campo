@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import React from 'react'
 import Item from "./Item"
+import './ItemList.css'
 
 
 export const Habitaciones = [

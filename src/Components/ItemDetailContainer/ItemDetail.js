@@ -2,8 +2,8 @@ import { useState } from "react";
 // import Button from "../Button/Button";
 import ItemCount from "../ItemCount/ItemCount";
 import Item from "../ItemListContainer/Item";
-// import './Styles/ItemDetail.css'
-// import './Styles/ItemCount.css'
+import './ItemDetail.css'
+
 
 const ItemDetail = (Item) =>{
 
@@ -20,7 +20,7 @@ return(
                     <b className="ItemDetail">Precio: ${Item.precio} {Item.noches >= 3 ? <span>30% OFF</span> : <span>15% OFF</span>   }</b>
                     <hr/>
                     <div className="item-contador">
-                    <ItemCount />
+                    <ItemCount max={10} min={0}/>
                     <p className="ItemDetail">Stock Disponible : {Item.noches}</p>
                     <p className="ItemDetail">{count >= Item.noches ? 'Stock Maximo' : ''}</p>
                     </div>

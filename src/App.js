@@ -11,8 +11,6 @@ function App() {
       <header className="row">
           <NavBar />
       </header>
-      <ItemListContainer/>
-      <ItemCount max={10} min={0} />
       <ItemDetailContainer/>
     </div>
   );

@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
-import ItemDetail from '../ItemDetailContainer/ItemDetail';
-import {Habitaciones} from '../ItemContainer/ItemList';
+import ItemDetail from './ItemDetail';
+import {Habitaciones} from '../ItemListContainer/ItemList';
 import Loading from '../Loading/Loading';
+
 
 
 function getListRooms (){

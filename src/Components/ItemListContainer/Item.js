@@ -1,6 +1,6 @@
 import React from 'react';
 
-import '../ItemListContainer/Item.css';
+import './Item.css';
 
 const Item = ({room}) => {
   
