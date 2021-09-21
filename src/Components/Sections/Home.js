@@ -35,7 +35,7 @@ const Home = ({ item }) => {
         <div className="ItemList">
           {Loader === true ?
             <Loading /> :
-            bestSeller.map((item) => <Item id={item.id} item={item} />)
+            bestSeller.map((item) => <Item id={item.id} room={item} />)
           }
         </div>
 

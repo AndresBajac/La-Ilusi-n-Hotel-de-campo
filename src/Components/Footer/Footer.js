@@ -9,7 +9,7 @@ const Footer = () => {
        <div className="footerInfo">
            <div className="footerSocial">
            <h3>
-               Tienda Blu
+               La Ilusión
            </h3>
            <p>Inicio</p>
            <p>Tienda</p>
@@ -41,13 +41,13 @@ const Footer = () => {
            <h3>
                Unete al Newsletter
            </h3>
-           <input type="text" placeholder="tienda@blu.com"></input>
+           <input type="text" placeholder="lailusion@hoteldecampo.com"></input>
            <Button label="Suscribete ahora"/>
            </div>
        </div>
        {/* footer creador */}
        <div className="footerCreator">
-           <h2>© 2021 <a href="https://www.linkedin.com/in/feralarcon1995/" target="_blank" rel="noreferrer">Fernando Alarcon</a> Derechos Reservados. </h2>
+           <h2>© 2021 <a href="https://www.linkedin.com/in/andres-bajac-745806186/" target="_blank" rel="noreferrer">Andrés Bajac</a>CopyLeft - prohibido prohibir </h2>
        </div>
      </div>
 
