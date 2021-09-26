@@ -1,0 +1,14 @@
+.CartWidget{
+    background-color: #1619c0;
+    display: flex;
+    justify-content: space-evenly;
+    color: #eee;
+    width: 120px;
+    align-items: center;
+}
+.CartWidget-link, .CartWidget span{
+    color: #eee;
+    font-size: 24px;
+    transition: 0.1s;
+    text-decoration: none;
+}

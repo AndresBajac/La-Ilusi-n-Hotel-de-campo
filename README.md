@@ -2,6 +2,15 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+### Objetives
+Building an ecommerce using React and Firebase. Design made by me. Construir una ecommerce usando React y Firebase. Diseño hecho por mi.
+
+### Tools
+Database: Firebase JS 
+Library: React CSS 
+framework: utilicé la versión de Bootstrap 5.1.0, además de React-bootstrap 2.0.0   
+Para emular la llamada a la API, utilicé un spinner 
+
 ## Available Scripts
 
 In the project directory, you can run:
