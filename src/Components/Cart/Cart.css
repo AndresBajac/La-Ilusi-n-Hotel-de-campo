@@ -1,5 +1,5 @@
 .cart{
-    background-image: url('../../assets/img/fondo.jpg');
+    background-image: url('../../Assets/fondo.jpg');
     background-size: cover;
     height: 100vh;
     width: 100%;
@@ -28,7 +28,7 @@
     padding: 20px;
 }
 .oops{
-    background-image: url('../../assets/img/oops.jpg');
+    background-image: url('../../Assets/oops.jpg');
     background-size: cover;
     height: 100vh;
     width: 100%;

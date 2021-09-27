@@ -1,10 +1,9 @@
-import './Styles/ItemDetail.css'
-import './Styles/ItemCount.css';
 import Button from '../Button/Button';
-import ItemCount from '../ItemContainer/ItemCount';
+import ItemCount from '../ItemCount/ItemCount';
 import {useState, useContext} from 'react';
 import {Link} from 'react-router-dom';
 import { CartContext } from '../../context/CartContext';
+import 'ItemDetail.css'
 
 
 const ItemDetail = ({products}) => {
@@ -25,7 +24,7 @@ const ItemDetail = ({products}) => {
      }
  
     
-    return (
+     return (
         <div>
             <div className="ItemContainerDetail">
                 {/* ITEM DESCRIPCION */}

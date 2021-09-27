@@ -1,39 +1,46 @@
 import React, {useState} from "react";
-import {div, p, button} from 'bootstrap'
+import {div, p} from 'bootstrap'
+import Button from "../Button/Button";
 import './ItemCount.css'
 
+const ItemCount = ({products}) => {
 
-const ItemCount = (props) => {
 
     const [count, setCount] = useState(0);
-    
-    function onAdd (sign) {
-        if ((sign === '+') && (count < props.max)) {
-            setCount(count+1);
-        } else if ((sign === '-') && (count > props.min)) {
-            setCount(count-1);
+
+    const aumentar = () => {
+        if (count >= products?.stock) {
+            console.log('ya no sumo mas')
+        }
+        else {
+            setCount(count + 1);
         }
     }
+    const decrementar = () => {
+        if (count <= 0) {
+            console.log('no hago nada')
+        }
+        else {
+            setCount(count - 1);
+        }
+    }
+ 
+
 
     return (
-        <div>
-            <h1>Habitación en suite - Refugio dorado</h1>
-            <br />
-            <p>Número de noches a alquilar</p>
-            <br />
 
-          <div className="counter-container d-flex flex-row justify-content-around align-items-center shadow mt-3">
-            <button className="btn" onClick={() => onAdd('-')}> - </button> 
-            <p className="count"> {count} </p>
-            <button className="btn" onClick={() => onAdd('+')}> + </button>
-          </div>
-          <br/>
-          <button type="button" class="btn btn-success" onClick={() => setCount(0)}> Limpiar selección </button>
+      
+         <div className="item-stock">
+           
+            <div className="item-contador">
+              <Button function={decrementar} className="btn-red" label="-">-</Button>
+              <p className="itemCount">{count}</p>
+              <Button function={aumentar} className="btn-blue" label="+">+</Button>
+            </div>
+            <p>{count >= products?.stock ? 'Stock Maximo' : ''}</p>
+         </div>
+             
 
-        </div>
-    );
-
-
+    )
 }
-
-export default ItemCount;
+export default ItemCount
