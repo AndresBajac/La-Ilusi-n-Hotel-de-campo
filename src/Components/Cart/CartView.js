@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { CartContext } from '../../context/CartContext';
+import { CartContext } from '../../Context/CartContext';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';

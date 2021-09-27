@@ -1,5 +1,5 @@
 .tienda-contenedor{
-    background-image: url('../../../assets/img/fondo.jpg');
+    background-image: url('../../Assets/fondo.jpg');
     background-size: cover;
 }
 .ItemListDetail{
