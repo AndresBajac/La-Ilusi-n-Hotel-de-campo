@@ -1,29 +1,46 @@
 import Button from '../Button/Button';
 import ItemCount from '../ItemCount/ItemCount';
-import {useState, useContext} from 'react';
+import {useState} from 'react';
 import {Link} from 'react-router-dom';
-import { CartContext } from '../../Context/CartContext';
 import './ItemDetail.css'
+import '../ItemCount/ItemCount.css'
 
-const ItemDetail = ({products}) => {
+const ItemDetail = ({ products }) => {
 
-    const { addCart } = useContext(CartContext);
-   
-    const [valor,setValor] = useState('');
+
+    const [cart, setCart] = useState(true);
+
+    const [itemCount, setItemCount] = useState();
+
+    const [valor, setValor] = useState('');
 
     const getValue = (e) => {
         setValor(e.target.value)
         console.log(valor);
     }
-    const onAddCart = (products,valor) => {
 
-        addCart({products,valor});
-        console.log(addCart)
-        
-     }
- 
-    
-     return (
+    const handleOnAdd = () => {
+        setCart(false);
+    };
+
+    const FinalizarCompra = () => {
+
+        //APARECE EL CARRITO
+        const onClick = () => {
+            setCart(true);
+        };
+
+        return (
+            <div>
+                <Button function={onClick} label="Volver"> </Button>
+                <Link to="/cart" className="link">
+                    <Button label="Finalizar Compra"></Button>
+                </Link>
+            </div>
+        );
+    };
+
+    return (
         <div>
             <div className="ItemContainerDetail">
                 {/* ITEM DESCRIPCION */}
@@ -42,9 +59,17 @@ const ItemDetail = ({products}) => {
                             <option value="XLL">XXL</option>
                         </select>
                         {/* ITEM BOTON CONTADOR */}
-                        <ItemCount  products={products}/>
-                        <p className="ItemDetail">Stock Disponible : {products?.stock}</p>
-                        <Link to={'/cart'}><Button function={onAddCart} className="btnAddCart" label='Agregar al carrito' ></Button></Link>
+                        {cart ? (
+                            <ItemCount
+                                stock={5}
+                                products={products}
+                                initial={0}
+                                onAdd={handleOnAdd}
+                                setItemCount={setItemCount}
+                            />
+                        ) : (
+                            <FinalizarCompra />
+                        )}
 
                     </div>
 
@@ -67,8 +92,8 @@ const ItemDetail = ({products}) => {
     )
 
 
-    }
-   
+}
+
 
 
 export default ItemDetail

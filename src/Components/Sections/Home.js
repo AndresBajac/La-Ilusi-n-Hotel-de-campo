@@ -1,14 +1,17 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
 import Button from '../Button/Button';
-import {Habitaciones} from '../ItemListContainer/ItemList';
-import Item from '../ItemListContainer/Item'
+import ImgPortada from '../../Assets/running.jpg';
+import { products } from '../ItemListContainer/ItemListContainer';
+import Item from '../ItemListContainer/Item';
 import Loading from '../Loading/Loading';
 import './Home.css'
-const Home = ({ item }) => {
+
+
+const Home = ({ product }) => {
   const [Loader, setLoader] = useState(true);
 
-  const bestSeller = Habitaciones.slice(0, 3);
+  const bestSeller = products.slice(0, 3);
 
   useEffect(() => {
     setTimeout(() => {
@@ -22,25 +25,25 @@ const Home = ({ item }) => {
     <div>
       {//SECCION UNO
       }
-      <div className="contenedor-principalHome" >
+      <div className="contenedor-principalHome" style={{ backgroundImage: `url(${ImgPortada})`, backgroundRepeat: 'no-repeat', backgroundSize: 'cover', width: '100%', height: '100vh' }}>
         <div className="contenedor-infoHome">
-          <h2 className="contenedor-titulo">Tus vacaciones soñadas</h2>
+          <h2 className="contenedor-titulo">Hacia tus vacaciones soñadas</h2>
         </div>
       </div>
       {//SECCION DOS
       }
       <div className="contenedor-ventas">
-        <h2 className="contenedor-subtitulo">Habitaciones únicas en la zona</h2>
+        <h2 className="contenedor-subtitulo">Tendencias en Habitaciones</h2>
         <hr />
         <div className="ItemList">
           {Loader === true ?
             <Loading /> :
-            bestSeller.map((item) => <Item id={item.id} room={item} />)
+            bestSeller.map((product) => <Item product={product} key={product.id} />)
           }
         </div>
 
         <Link to={"/tienda"}>
-          <Button className="contenedor-btn" label="Recorrer habitaciones" />
+          <Button className="contenedor-btn" label="Ver toda la tienda" />
         </Link>
       </div>
 

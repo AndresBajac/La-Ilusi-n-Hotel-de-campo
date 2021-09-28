@@ -1,19 +1,20 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom';
+import Button from '../Button/Button';
 import './Item.css';
 
-const Item = ({room}) => {
-  
- return (
-    <div className="card col-four">
-        <div className="img-container">
-            {/* <img src={room.img} className="img-cover" /> */}
-        </div>
-        <h1 className="title">{room.nombre}</h1>
-        <p className="price">{`$${room.precio}`}</p>
-        <p className="descripcion">{room.descripcion}</p>
-    </div>
-  );
-};
+const Item = ({ product, setCartItem }) => {
 
+    return (
+        <div className="ItemContainer">
+            <img src={product?.img} alt={product?.alt} />
+            <h3 className="ItemInfo">{product?.nombre}</h3>
+            <b className="ItemInfo">Precio: ${product?.precio} {product?.stock >= 10 ? <span>30% OFF</span> : <span>15% OFF</span>}</b>
+            <hr />
+            <Link to={`/tienda/detalle/${product?.id}` }>
+                <Button className="btnAddCart" label='Ver Producto' id={product?.id} ></Button>
+            </Link>
+        </div>
+    )
+}
 export default Item

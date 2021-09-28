@@ -1,49 +1,36 @@
 
 import React from 'react'
+import { Link } from 'react-router-dom';
 import { CartWidget } from '../CartWidget/CartWidget';
-import {Navbar , Nav, NavDropdown, Form, FormControl, Button} from 'react-bootstrap'
 import './NavBar.css'
 
-const NavBar = () => {
-    return (
-    
-      <Navbar className="nav" bg="light" expand="lg">
-      <Navbar.Brand href="#">La Ilusión - Hotel de campo</Navbar.Brand>
-      <Navbar.Toggle aria-controls="navbarScroll" />
-      <Navbar.Collapse id="navbarScroll">
-        <Nav fill 
-          className="mr-auto my-2 my-lg-0"
-          style={{ maxHeight: '100px' }}
-          navbarScroll
-        >
-          <Nav.Link href="#action1">Home</Nav.Link>
-          <Nav.Link href="#action2">Reservas</Nav.Link>
-          <NavDropdown title="Habitaciones" id="navbarScrollingDropdown">
-            <NavDropdown.Item href="#action3">El Molino</NavDropdown.Item>
-            <NavDropdown.Divider />
-            <NavDropdown.Item href="#action4">Monte Hermoso</NavDropdown.Item>
-            <NavDropdown.Divider />
-            <NavDropdown.Item href="#action5">Quebracho colorado</NavDropdown.Item>
-            <NavDropdown.Divider />
-            <NavDropdown.Item href="#action5">Manantial</NavDropdown.Item>
-          </NavDropdown>
-          <Nav.Link href="#" disabled>
-            
-          </Nav.Link>
-        </Nav>
-        <Form className="d-flex">
-          <FormControl
-            type="search"
-            placeholder="Search"
-            className="mr-2"
-            aria-label="Search"
-          />
-          <Button variant="outline-success">Buscar</Button>
-        </Form>
-      </Navbar.Collapse>
-      <CartWidget/>
-    </Navbar>
-    );
+const NavBar = ({cartItem, item}) => {
+
+  return (
+  <header>
+    <nav className="Menu">
+       <Link to={"/"}><h2 className="Menu-titulo"> La Ilusión - Hotel de Campo </h2></Link>
+          <div className="Menu-item">
+              <ul className="menu-lista">
+                  <li> <Link to={"/"} className="Menu-link">Inicio</Link></li>
+                  <li> <Link to={"/sobre_nosotros"} className="Menu-link">Sobre Nosotros</Link></li>
+                  <li> <Link to={"/tienda"} className="Menu-link tienda">Habitaciones</Link>
+                      <ul className="sub-menu">
+                          <li><Link to={"/tienda"} className="Menu-link">Singles</Link></li>
+                          <li><Link to={"/tienda/categoria/camiseta"} className="Menu-link">Dobles</Link></li>
+                          <li><Link to={"/tienda/categoria/chaqueta"} className="Menu-link">Familiares</Link></li>
+                      </ul>
+                  </li> 
+                   <li> <Link to={"/contacto"} className="Menu-link">Contacto</Link></li>
+
+              </ul> 
+          </div>
+          <CartWidget cartItem={cartItem}/>
+        </nav>
+  </header>
+      
+          )
+
 }
 
-export default NavBar
+          export default NavBar

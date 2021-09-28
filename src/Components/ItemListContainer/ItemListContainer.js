@@ -5,47 +5,63 @@ import ItemList from './ItemList';
 import ImgRunning2 from '../../Assets/running2.jpg';
 import './ItemListContainer.css'
 import Loading from '../Loading/Loading'
+import Single from '../../Assets/single.jpg'
+import Matrimonial from '../../Assets/matrimonial.jpg'
+import Familiar from '../../Assets/familiar.jpg'
 
 
 export const products = [
 
     {
-        id: '13',
-        img: 'https://solodeportes-9bvc3m9qgmf6g9x.stackpathdns.com/media/catalog/product/cache/7c4f9b393f0b8cb75f2b74fe5e9e52aa/c/a/campera-rompeviento-flash-entrenamiento-greystone-gris-270020w21greygr-1.jpg',
-        img2: 'https://solodeportes-9bvc3m9qgmf6g9x.stackpathdns.com/media/catalog/product/cache/3cb7d75bc2a65211451e92c5381048e9/c/a/campera-rompeviento-flash-entrenamiento-greystone-gris-270020w21greygr-2.jpg',
-        nombre: 'Chaqueta Rompe Viento M',
-        descripcion: `campera FLASH con capucha, diseñada para darlo todo en tus entrenamientos.
-    Cordón de ajuste visible.
-    Bolsillo de frente con cierre.
-    Bolsillos laterales con botones.
-    Cintura y puños elásticos.`,
-        material: '100% Poliéster',
-        alt: 'Chaqueta rompe vientos femenina',
+        id: '01',
+        img: Single,
+        img2: '',
+        nombre: 'Refugio Dorado',
+        descripcion: `Con vistas a un pequeño bosque de algarrobos, sus ventanas están orientadas a la puesta de Sol, generando un hermoso atardecer que tiñe de dorado las copas de los árboles`,
+        material: 'Cama-sommier individual, ropa blanca, placard empotrado, aire acondicionado.',
+        alt: 'Habitación individual',
         sexo: 'hombre',
-        categoria: 'chaqueta',
-        precio: 17000,
-        stock: 14
+        categoria: 'Single',
+        precio: 6500,
+        stock: 5
     },
     {
-        id: '14',
-        img: 'https://solodeportes-9bvc3m9qgmf6g9x.stackpathdns.com/media/catalog/product/cache/7c4f9b393f0b8cb75f2b74fe5e9e52aa/r/e/remera-adidas-running-own-the-run-gris-100020gc7869001-1.jpg',
-        img2: 'https://solodeportes-9bvc3m9qgmf6g9x.stackpathdns.com/media/catalog/product/cache/3cb7d75bc2a65211451e92c5381048e9/r/e/remera-adidas-running-own-the-run-gris-100020gc7869001-2.jpg',
-        nombre: 'Camiseta Entrenamiento M',
-        descripcion: `Tenés el cajón lleno de remeras que no te sirven.
-    Demasiado gruesas o finas.
-    Muy ajustadas o excesivamente holgadas.
-    Olvidate de esas incomodidades y ponete la remera ADIDAS Own the Run.
-    Se ha confeccionado con materiales reciclados Primegreen como parte de nuestro compromiso con la sostenibilidad y para ofrecerte la máxima comodidad de principio a fin de la carrera.
-    No te conformes con menos.
-    El tejido transpirable AEROREADY mantiene la piel fresca y seca.
-    Los detalles reflectantes te permiten correr con seguridad al amanecer o al atardecer.
-    Logo ADIDAS y detalles en estampado reflectivos.`,
-        material: '100% Poliéster',
-        alt: 'Chaqueta rompe vientos femenina',
-        sexo: 'hombre',
-        categoria: 'camiseta',
-        precio: 5199,
-        stock: 16
+        id: '02',
+        img: Matrimonial,
+        img2: '',
+        nombre: 'Rancho Aparte',
+        descripcion: `Ideal para parejas, luna de miel, escapada de fin de semana o aniversarios.
+    Traquilidad y paz al extremo.
+    No tenés que preocuparte por nada.
+    Baño en suite.
+    Sabanas de seda y algodón Pyma para ofrecerte la máxima comodidad de principio a fin de tu estadía.
+    No te conformes con menos.`,
+        material: 'Seda y algodón Pyma',
+        alt: 'Habitación matrimonial',
+        sexo: 'indistinto',
+        categoria: 'Dobles',
+        precio: 9500,
+        stock: 3
+    },
+
+    {
+        id: '03',
+        img: Familiar ,
+        img2: '',
+        nombre: 'Manantial',
+        descripcion: `Ideal para familias con hijos, ya que posee una cama matrimonial y otras camas indiviales adaptables.
+    Traquilidad y paz al extremo.
+    No tenés que preocuparte por nada.
+    Baño en suite.
+    Frigobar.
+    Televisión satelital.
+    Juegos de mesa disponibles.`,
+        material: 'Seda y algodón Pyma',
+        alt: 'Habitación familiar',
+        sexo: 'indistinto',
+        categoria: 'Familiar',
+        precio: 12000,
+        stock: 2
     }
 
 
