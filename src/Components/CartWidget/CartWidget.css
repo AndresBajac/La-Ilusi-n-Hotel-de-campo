@@ -1,12 +1,14 @@
-.cartIcon{
-    width: min-content;
-    height: 50px;
-    margin: 0;
-    margin-left: 50px;
-    
+.CartWidget{
+    background-color: #1619c0;
+    display: flex;
+    justify-content: space-evenly;
+    color: #eee;
+    width: 120px;
+    align-items: center;
 }
-
-img{   
-    width: 24px;
-    height: 24px;
+.CartWidget-link, .CartWidget span{
+    color: #eee;
+    font-size: 24px;
+    transition: 0.1s;
+    text-decoration: none;
 }

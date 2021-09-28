@@ -29,8 +29,8 @@
 }
 .oops{
     background-image: url('../../Assets/oops.jpg');
-    background-size: cover;
-    height: 100vh;
+    background-size: contain;
+    height: 75vh;
     width: 100%;
 }
 .cart-titulo{

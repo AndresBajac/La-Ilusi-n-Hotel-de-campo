@@ -1,5 +1,6 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { useState } from 'react';
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom'
 import { CartProvider } from './Context/CartContext';
 import NavBar from '../src/Components/Navbar/NavBar'
@@ -10,11 +11,14 @@ import CartView from '../src/Components/Cart/CartView'
 import Footer from './Components/Footer/Footer';
 
 function App() {
+
+  const [cartItem, setCartItem] = useState(0);
+
   return (
     <>
       <CartProvider>
         <BrowserRouter>
-          <NavBar />
+          <NavBar cartItem={cartItem} />
           <Switch>
             <Route exact path="/">
               <Home />
@@ -26,7 +30,10 @@ function App() {
               <ItemListContainer />
             </Route>
             <Route exacy path='/tienda/detalle/:itemId'>
-              <ItemDetailContainer/>
+              <ItemDetailContainer setCartItem={setCartItem}/>
+            </Route>
+            <Route exact path='/cart' >
+              <CartView />
             </Route>
             <Route path="*">
                 <Redirect to="/"/>
