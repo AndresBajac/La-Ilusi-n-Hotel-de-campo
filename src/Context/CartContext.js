@@ -16,6 +16,12 @@ export const CartProvider = ({ children }) => {
         setCarrito(newList);
     };
 
+
+      //FUNCION PARA LA CANTIDAD DE ELEMENTOS DEL CARRITO,TANTO PARA SUMAR COMO RESTAR
+      const cantidadElementosDelCarrito = () => {
+        return carrito.reduce((suma, product) => suma + product.quantity, 0)
+    }
+
     //FUNCION CAMBIA CANTIDAD DE PRODUCTO
     const changeQuantity = (count) => {
         setQuantity(count);
@@ -47,7 +53,8 @@ export const CartProvider = ({ children }) => {
                 quantity,
                 deleteItem,
                 setCarrito,
-                precioTotal
+                precioTotal,
+                cantidadElementosDelCarrito 
             }}>
 
             {children}

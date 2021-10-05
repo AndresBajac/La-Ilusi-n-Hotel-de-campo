@@ -32,9 +32,12 @@ const ItemDetail = ({ products }) => {
 
         return (
             <div>
-                <Button function={onClick} label="Volver"> </Button>
+                <Button function={onClick} label="Volver" className="btnAddCart"> </Button>
+                <Link to="/tienda" className="link">
+                    <Button label="Seguir Comprando" className="btnAddCart"></Button>
+                </Link>
                 <Link to="/cart" className="link">
-                    <Button label="Finalizar Compra"></Button>
+                    <Button label="Finalizar Compra" className="btnAddCart"></Button>
                 </Link>
             </div>
         );

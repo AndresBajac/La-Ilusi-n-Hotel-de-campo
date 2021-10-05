@@ -6,18 +6,30 @@ import { products } from '../ItemListContainer/ItemListContainer';
 import Item from '../ItemListContainer/Item';
 import Loading from '../Loading/Loading';
 import './Home.css'
+import { db } from '../../services/firebase/firebase';
+import { collection, getDocs } from 'firebase/firestore';
 
 
-const Home = ({ product }) => {
+const Home = () => {
+
+  const [products, setProducts] = useState([]);
+
   const [Loader, setLoader] = useState(true);
 
   const bestSeller = products.slice(0, 3);
 
   useEffect(() => {
-    setTimeout(() => {
-      //UNA VEZ PASADO LOS 2 SEGUNDOS, EL LOADER DESAPARECE
+    setLoader(true)
+    getDocs(collection(db, 'products')).then((querySnapshot) => {
+      const products = querySnapshot.docs.map(doc => {
+        return { id: doc.id, ...doc.data() }
+      })
+      setProducts(products)
+    }).catch((error) => {
+      console.log('Error al encontrar productos', error)
+    }).finally(() => {
       setLoader(false)
-    }, 2000);
+    })
 
   }, [])
 
