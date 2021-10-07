@@ -16,7 +16,7 @@ const ItemDetailContainer = () => {
 
   const [Loader, setLoader] = useState(true);
 
-  const { itemid } = useParams();
+  const { itemId } = useParams();
 
   const [product, setProduct] = useState(undefined);
 
@@ -25,7 +25,7 @@ const ItemDetailContainer = () => {
 
     setLoader(true)
 
-    getDoc(doc(db, 'products', itemid)).then((querySnapshot) => {
+    getDoc(doc(db, 'products', itemId)).then((querySnapshot) => {
 
       console.log({ id: querySnapshot.id, ...querySnapshot.data() })
 
@@ -45,7 +45,7 @@ const ItemDetailContainer = () => {
       
       setProduct(undefined)
     })
-  }, [itemid])
+  }, [itemId])
 
   return (
     <div className="tienda-contenedor">
@@ -54,7 +54,7 @@ const ItemDetailContainer = () => {
         <hr className="TiendaHr" />
       </div>
       <div className="ItemListDetail">
-      {Loader ? <Loading /> : <ItemDetail product={product} itemid={itemid} />}
+      {Loader ? <Loading /> : <ItemDetail product={product} itemid={itemId} />}
       </div>
 
     </div>
