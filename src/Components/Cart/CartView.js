@@ -7,8 +7,7 @@ import './Cart.css'
 
 const CartView = () => {
 
-    const { carrito, clearCart,precioTotal } = useContext(CartContext);
-
+    const { carrito, clearCart, precioTotal, cantidadElementosDelCarrito } = useContext(CartContext);
 
     const ContenidoCarrito = () => {
 
@@ -39,16 +38,24 @@ const CartView = () => {
 
     const CarritoVacio = () => {
 
-        return(
+        return (
 
-            <Link to={'/tienda'}><div className="oops"> </div></Link>
+            <div className="cart">
+                <h2 className="cart-titulo">Carrito Vacio</h2>
+                <hr />
+                <p className="cart-titulo">¿Porque no visitas nuestra tienda?</p>
+                <Link to={'/tienda'}>
+                    <Button className="contenedor-btn" label="Ir a Tienda" />
+                </Link>
+
+            </div>
 
         )
     }
 
     return (
-        <>  
-     {carrito ? <ContenidoCarrito /> : <CarritoVacio />}
+        <>
+            {(cantidadElementosDelCarrito() !== 0) ? <ContenidoCarrito /> : <CarritoVacio />}
         </>
     )
 }

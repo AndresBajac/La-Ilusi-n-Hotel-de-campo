@@ -12,13 +12,13 @@ import { doc, getDoc } from 'firebase/firestore'
 //     resolve(products)
 //   })
 // }
-const ItemDetailContainer = ({ setCartItem }) => {
+const ItemDetailContainer = () => {
 
   const [Loader, setLoader] = useState(true);
 
   const { itemid } = useParams();
 
-  const [product, setProduct] = useState([]);
+  const [product, setProduct] = useState(undefined);
 
 
   useEffect(() => {

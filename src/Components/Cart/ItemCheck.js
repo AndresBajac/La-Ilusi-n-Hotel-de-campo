@@ -1,52 +1,37 @@
 import { useContext } from 'react';
 import { CartContext } from '../../Context/CartContext';
-import { Link } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTrash } from '@fortawesome/free-solid-svg-icons';
 import Button from '../Button/Button';
 import './Cart.css'
 
-const CartView = () => {
+const ItemCheck = ({items}) => {
 
-    const { cart, deleteProduct, numElemCart, clearCart, precioTotal } = useContext(CartContext)
+    const { deleteItem  } = useContext(CartContext)
 
     return (
         <>
-            {(numElemCart() !== 0)
-                ? <div className="cart">
-                    <h2 className="cart-titulo">Sus compras</h2>
-                    <hr />
-                    <div className="cart-contenedor">
-                    {cart.map(products => (
-                        <div key={products?.id} className="product-cart">
-                            <div>
-                                <img src={products?.img} />
-                            </div>
-                            <div>
-                                <h3> Nombre: {products?.nombre} </h3>
-                                <h4> Unidades: {products?.stock}</h4>
-                                <h5> Precio ${products?.precio * products?.stock}</h5>
-                                < FontAwesomeIcon icon={faTrash} onClick={() => deleteProduct(products?.id)} />
-
-                            </div>
-                        </div>
-                    ))}
-                    <div className="total-contenedor">
-                        <h3>Precio Total</h3>
-                        <p>$ {precioTotal}</p>
-                        <Link to={'/checkout'}><Button className="btn-compra" label="Finalizar la compra"></Button></Link>
-                    </div>
-                    </div>
-                    <Button function={clearCart} className="btn-delete" label="Eliminar todos los productos del carrito" />
+            <div key={items?.id} className="product-list">
+                <div className="product-img" >
+                    <img src={items?.img}  alt={items?.alt}/>
                 </div>
-                :
-                <Link to={'/tienda'}><div className="oops"> </div></Link>
-
-            }
+                <div className="product-info" >
+                    <h3> {items?.nombre} </h3>
+                    <h4> Unidades: {items?.quantity} </h4>
+                    <h5> Precio $ {items?.precio} </h5>                    
+                </div>
+                <hr className="product-hr"/>
+                <div className="product-price" >
+                    <h3> Total a pagar </h3>
+                    <p> $ {Number(items.precio) * Number(items.quantity)} </p>
+                    <Button
+                        function={() => deleteItem(items?.id)}
+                        label="Eliminar Producto"
+                        className="btn-borrar" />
+                </div>
+            </div>
 
 
         </>
     )
 }
 
-export default CartView
+export default ItemCheck
