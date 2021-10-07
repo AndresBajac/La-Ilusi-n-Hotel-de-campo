@@ -5,7 +5,7 @@ import {Link} from 'react-router-dom';
 import './ItemDetail.css'
 import '../ItemCount/ItemCount.css'
 
-const ItemDetail = ({ products }) => {
+const ItemDetail = ({ product }) => {
 
 
     const [cart, setCart] = useState(true);
@@ -48,11 +48,11 @@ const ItemDetail = ({ products }) => {
             <div className="ItemContainerDetail">
                 {/* ITEM DESCRIPCION */}
                 <div className="ItemDescripcion">
-                    <img src={products?.img} alt={products?.alt} />
+                    <img src={product?.img} alt={product?.alt} />
                     <div className="itemContenedor">
-                        <h3 className="ItemDetailNombre">{products?.nombre}</h3>
+                        <h3 className="ItemDetailNombre">{product?.nombre}</h3>
                         <p>Hasta 6 cuotas sin interes</p>
-                        <b className="ItemDetail">Precio: ${products?.precio} {products?.stock >= 10 ? <span>30% OFF</span> : <span>15% OFF</span>}</b>
+                        <b className="ItemDetail">Precio: ${product?.precio} {product?.stock >= 10 ? <span>30% OFF</span> : <span>15% OFF</span>}</b>
                         <select onChange={getValue} defaultValue={'DEFAULT'} >
                             <option value="DEFAULT" disabled>Selecciona tu mes de estadía</option>
                             <option value="E">Enero</option>
@@ -65,7 +65,7 @@ const ItemDetail = ({ products }) => {
                         {cart ? (
                             <ItemCount
                                 stock={5}
-                                products={products}
+                                products={product}
                                 initial={0}
                                 onAdd={handleOnAdd}
                                 setItemCount={setItemCount}
@@ -81,11 +81,11 @@ const ItemDetail = ({ products }) => {
                 <div className="detallesContenedor">
                     <div className="detalles">
                         <h4 className="detallesTitulo">DETALLES</h4>
-                        <p className="detallesInfo"><span>{products?.descripcion}</span></p>
+                        <p className="detallesInfo"><span>{product?.descripcion}</span></p>
                     </div>
                     <div className="detalles">
                         <h4 className="ItemTitulo">MATERIAL: </h4>
-                        <p className="detallesInfo"><span>{products?.material}</span></p>
+                        <p className="detallesInfo"><span>{product?.material}</span></p>
                     </div>
                 </div>
                 {/* FIN ITEM DETALLES */}
