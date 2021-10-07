@@ -55,11 +55,11 @@ const ItemDetail = ({ products }) => {
                         <b className="ItemDetail">Precio: ${products?.precio} {products?.stock >= 10 ? <span>30% OFF</span> : <span>15% OFF</span>}</b>
                         <select onChange={getValue} defaultValue={'DEFAULT'} >
                             <option value="DEFAULT" disabled>Selecciona tu mes de estadía</option>
-                            <option value="S">Enero</option>
-                            <option value="M">Febrero</option>
-                            <option value="L">Junio</option>
-                            <option value="XL">Julio</option>
-                            <option value="XLL">Diciembre</option>
+                            <option value="E">Enero</option>
+                            <option value="F">Febrero</option>
+                            <option value="J">Junio</option>
+                            <option value="Jl">Julio</option>
+                            <option value="D">Diciembre</option>
                         </select>
                         {/* ITEM BOTON CONTADOR */}
                         {cart ? (
