@@ -29,7 +29,7 @@ export const CartProvider = ({ children }) => {
 
     //FUNCION LIMPA CARRITO
     const clearCart = () => {
-        setCarrito(undefined);
+        setCarrito([]);
         setQuantity(0);
     };
 
