@@ -3,27 +3,27 @@ import { CartContext } from '../../Context/CartContext';
 import Button from '../Button/Button';
 import './Cart.css'
 
-const ItemCheck = ({items}) => {
+const ItemCheck = ({products}) => {
 
     const { deleteItem  } = useContext(CartContext)
 
     return (
         <>
-            <div key={items?.id} className="product-list">
+            <div key={products?.id} className="product-list">
                 <div className="product-img" >
-                    <img src={items?.img}  alt={items?.alt}/>
+                    <img src={products?.img}  alt={products?.alt}/>
                 </div>
                 <div className="product-info" >
-                    <h3> {items?.nombre} </h3>
-                    <h4> Unidades: {items?.quantity} </h4>
-                    <h5> Precio $ {items?.precio} </h5>                    
+                    <h3> {products?.nombre} </h3>
+                    <h4> Unidades: {products?.quantity} </h4>
+                    <h5> Precio $ {products?.precio} </h5>                    
                 </div>
                 <hr className="product-hr"/>
                 <div className="product-price" >
                     <h3> Total a pagar </h3>
-                    <p> $ {Number(items.precio) * Number(items.quantity)} </p>
+                    <p> $ {Number(products.precio) * Number(products.quantity)} </p>
                     <Button
-                        function={() => deleteItem(items?.id)}
+                        function={() => deleteItem(products?.id)}
                         label="Eliminar Producto"
                         className="btn-borrar" />
                 </div>

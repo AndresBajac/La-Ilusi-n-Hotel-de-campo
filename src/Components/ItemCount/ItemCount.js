@@ -1,12 +1,17 @@
-import React, {useState} from "react";
+import React, {useState, useContext} from "react";
 import {div, p} from 'bootstrap'
 import Button from "../Button/Button";
+import { CartContext } from '../../Context/CartContext'
 import './ItemCount.css'
 
-const ItemCount = ({products}) => {
+const ItemCount = ({products, initial, onAdd, setItemCount}) => {
 
+    const { quantity, changeQuantity, addProduct, carrito, setCarrito } =
+        useContext(CartContext);
 
-    const [count, setCount] = useState(0);
+    const [count, setCount] = useState(initial);
+
+    setItemCount(count);
 
     const aumentar = () => {
         if (count >= products?.stock) {
@@ -14,6 +19,9 @@ const ItemCount = ({products}) => {
         }
         else {
             setCount(count + 1);
+            changeQuantity(quantity + 1);
+
+
         }
     }
     const decrementar = () => {
@@ -22,9 +30,41 @@ const ItemCount = ({products}) => {
         }
         else {
             setCount(count - 1);
+            changeQuantity(quantity - 1);
         }
     }
- 
+
+    const onAddToCart = () => {
+        const cartId = carrito?.map(products => products.id)
+
+        if (cartId?.includes(products.id)) {
+            const updateCart = carrito?.map(i => {
+                if (i.id === products.id) {
+
+                    let oldQuantity = i.quantity
+                    return {
+                        ...i,
+                        quantity: count + oldQuantity
+                    }
+                } else {
+                    return i
+                }
+            })
+            setCarrito(updateCart)
+        } else {
+            const newProduct = {
+                ...products,
+                quantity: count,
+            };
+
+            carrito
+                ? addProduct([...carrito, newProduct])
+                : addProduct([newProduct]);
+        }
+
+
+        onAdd();
+    };
 
 
     return (
@@ -38,6 +78,8 @@ const ItemCount = ({products}) => {
               <Button function={aumentar} className="btn-blue" label="+">+</Button>
             </div>
             <p>{count >= products?.stock ? 'Stock Maximo' : ''}</p>
+
+            <Button function={onAddToCart} className="btnAddCart" label='Agregar al carrito' ></Button>
          </div>
              
 
