@@ -1,5 +1,4 @@
 import React, {useState, useContext} from "react";
-import {div, p} from 'bootstrap'
 import Button from "../Button/Button";
 import { CartContext } from '../../Context/CartContext'
 import './ItemCount.css'
@@ -77,6 +76,7 @@ const ItemCount = ({products, initial, onAdd, setItemCount}) => {
               <p className="itemCount">{count}</p>
               <Button function={aumentar} className="btn-blue" label="+">+</Button>
             </div>
+            <p>Stock: {products?.stock}</p>
             <p>{count >= products?.stock ? 'Stock Maximo' : ''}</p>
 
             <Button function={onAddToCart} className="btnAddCart" label='Agregar al carrito' ></Button>

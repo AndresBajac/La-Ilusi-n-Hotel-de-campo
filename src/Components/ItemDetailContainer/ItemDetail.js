@@ -37,7 +37,7 @@ const ItemDetail = ({ product }) => {
                     <Button label="Seguir Comprando" className="btnAddCart"></Button>
                 </Link>
                 <Link to="/cart" className="link">
-                    <Button label="Finalizar Compra" className="btnAddCart"></Button>
+                    <Button label="Ir al carrito" className="btnAddCart"></Button>
                 </Link>
             </div>
         );
@@ -52,7 +52,7 @@ const ItemDetail = ({ product }) => {
                     <div className="itemContenedor">
                         <h3 className="ItemDetailNombre">{product?.nombre}</h3>
                         <p>Hasta 6 cuotas sin interes</p>
-                        <b className="ItemDetail">Precio: ${product?.precio} {product?.stock >= 10 ? <span>30% OFF</span> : <span>15% OFF</span>}</b>
+                        <b className="ItemDetail">Precio: ${product?.precio} {product?.stock >= 3 ? <span>30% OFF</span> : <span>15% OFF</span>}</b>
                         <select onChange={getValue} defaultValue={'DEFAULT'} >
                             <option value="DEFAULT" disabled>Selecciona tu mes de estadía</option>
                             <option value="E">Enero</option>
