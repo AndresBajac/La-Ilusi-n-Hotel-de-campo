@@ -16,21 +16,30 @@ const CartView = () => {
             <div className="cart">
                 <h2 className="cart-titulo">Sus compras</h2>
                 <hr />
-                <div className="cart-contenedor">
-                    {carrito.map((products) => (
-                        <div key={products?.id} className="product-cart">
-                            <ItemCheck
-                                products={products}
-                            />
-                        </div>
-                    ))}
-                    <div className="total-contenedor">
-                        <h3>Precio Total</h3>
-                        <p>$ {precioTotal()}</p>
-                        <Link to={'/checkout'}><Button className="btn-compra" label="Finalizar la compra"></Button></Link>
+                <div className="total-contenedor">
+                    <h3>Precio Total de Compra: </h3>
+                    <p>$ {precioTotal()}</p>
+                    <Link to={'/checkout'}><Button className="btn-compra" label="Confirmar compra"></Button></Link>
+                </div>
+
+                <div className="producto-contenedor">
+                    <div className="cart-contenedor">
+                        {carrito.map((products) => (
+                            <div key={products?.id} className="product-cart">
+                                <ItemCheck
+                                    products={products}
+                                />
+                            </div>
+                        ))}
                     </div>
                 </div>
-                <Button function={clearCart} className="btn-delete" label="Eliminar todos los productos del carrito" />
+                <div className="btns">
+                    <Link to={'/tienda'}>
+                        <Button className="btn-seguir" label="Seguir Comprando" />
+                    </Link>
+                    <Button function={clearCart} className="btn-borrar" label="Limpiar Carrito" />
+                </div>
+
             </div>
         )
 
