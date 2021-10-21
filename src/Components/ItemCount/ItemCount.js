@@ -18,7 +18,7 @@ const ItemCount = ({products, initial, onAdd, setItemCount}) => {
         }
         else {
             setCount(count + 1);
-            changeQuantity(quantity + 1);
+            //changeQuantity(quantity + 1);
 
 
         }
@@ -29,7 +29,7 @@ const ItemCount = ({products, initial, onAdd, setItemCount}) => {
         }
         else {
             setCount(count - 1);
-            changeQuantity(quantity - 1);
+            //changeQuantity(quantity - 1);
         }
     }
 
@@ -61,7 +61,7 @@ const ItemCount = ({products, initial, onAdd, setItemCount}) => {
                 : addProduct([newProduct]);
         }
 
-
+        changeQuantity(quantity + 1);
         onAdd();
     };
 

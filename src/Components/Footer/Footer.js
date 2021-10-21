@@ -47,7 +47,7 @@ const Footer = () => {
        </div>
        {/* footer creador */}
        <div className="footerCreator">
-           <h2>© 2021 <a href="https://www.linkedin.com/in/andres-bajac-745806186/" target="_blank" rel="noreferrer">Andrés Bajac</a>CopyLeft - prohibido prohibir </h2>
+           <h2>© 2021 <a href="https://www.linkedin.com/in/andresbajac" target="_blank" rel="noreferrer">Andrés Bajac </a>CopyLeft - prohibido prohibir </h2>
        </div>
      </div>
 
