@@ -1,6 +1,12 @@
-# Getting Started with Create React App
+# Tienda virtual - Hotel de campo
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+La Ilusión-Hotel de campo, es un emprendimiento familiar que surje luego de adaptar un campo de ganado bovino, en el sudeste de la Provincia del Chaco, en un complejo turístico con experiencias innovadores y relajantes. La tienda virtual ofrece la posibilidad de elegir entre las habitaciones disponibles, visualizarla y conocer sus materiales.
+
+Cuenta con:
+
+• Listado de productos general ubicado en la página principal.
+• Filtro de productos por categorías, utilizando el menú de navegación.
+• Detalle de producto, al seleccionar un producto en específico.
 
 ### Objetives
 Building an ecommerce using React and Firebase. Design made by me. Construir una ecommerce usando React y Firebase. Diseño hecho por mi.
